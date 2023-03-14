@@ -29,14 +29,13 @@ const search = async (path: string, signal: AbortSignal, backwards = false) => {
         await file.seek(seek + i, Deno.SeekMode.Start);
         const header = new Uint8Array(32);
         const read = await file.read(header);
-        if (read === 32) {
-          const view = new DataView(header.buffer);
-          const i1 = view.getInt32(16);
-          const i2 = view.getInt32(20);
-          if (i1 > 0 && i2 > 0) {
-            duration = i2 / i1;
-            break;
-          }
+        if (read !== 32) continue;
+        const view = new DataView(header.buffer);
+        const i1 = view.getInt32(16);
+        const i2 = view.getInt32(20);
+        if (i1 && i2 && i2 > i1) {
+          duration = i2 / i1;
+          break;
         }
       }
       // Back up in case the header straddles the buffer
