@@ -2,7 +2,7 @@
 // https://developer.apple.com/library/archive/documentation/QuickTime/QTFF/QTFFChap2/qtff2.html
 // https://github.com/Borewit/music-metadata/blob/master/lib/mp4/MP4Parser.ts
 
-import * as bytes from 'https://deno.land/std@0.179.0/bytes/mod.ts';
+import * as bytes from 'https://deno.land/std@0.216.0/bytes/mod.ts';
 
 // Movie header atom signature
 const mvhd = new Uint8Array([109, 118, 104, 100]);

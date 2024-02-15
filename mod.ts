@@ -1,4 +1,4 @@
-import {extname} from 'https://deno.land/std@0.179.0/path/mod.ts';
+import {extname} from 'https://deno.land/std@0.216.0/path/mod.ts';
 
 import {mp3Duration} from './src/mp3.ts';
 import {m4aDuration} from './src/m4a.ts';

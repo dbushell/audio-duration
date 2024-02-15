@@ -2,7 +2,7 @@
 // https://github.com/eric-gilbertson/fast-mp3-duration
 // https://github.com/ddsol/mp3-duration
 
-import {Buffer} from 'https://deno.land/std@0.179.0/io/buffer.ts';
+import {Buffer} from 'https://deno.land/std@0.216.0/io/buffer.ts';
 
 const versions = ['2.5', 'x', '2', '1'];
 

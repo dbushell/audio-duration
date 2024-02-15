@@ -49,4 +49,4 @@ MIT License
 
 * * *
 
-[MIT License](/LICENSE) | Copyright © 2023 [David Bushell](https://dbushell.com) | [@dbushell](https://twitter.com/dbushell)
+[MIT License](/LICENSE) | Copyright © 2024 [David Bushell](https://dbushell.com) | [@dbushell](https://twitter.com/dbushell)
