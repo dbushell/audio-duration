@@ -43,4 +43,6 @@ const json = JSON.parse(
 
 You'll need to parse the output.
 
+* * *
+
 [MIT License](/LICENSE) | Copyright © 2024 [David Bushell](https://dbushell.com)
