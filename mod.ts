@@ -5,6 +5,11 @@ import {m4aDuration} from './src/m4a.ts';
 
 export {mp3Duration, m4aDuration};
 
+/**
+ * Get the duration of an audio file (`mp3`, `mp4`, `m4a`, `m4b`)
+ * @param {string} path - Path to file
+ * @returns {number} Duration in milliseconds
+ */
 export const duration = (path: string): Promise<number> => {
   switch (extname(path)) {
     case '.mp3':

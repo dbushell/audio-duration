@@ -51,8 +51,13 @@ const search = async (
   return Math.round(duration * 1000);
 };
 
-// Because the header is seemingly anywhere search backwards and forwards simultaneously
+/**
+ * Get the duration of an `mp4`, `m4a`, or `m4b` audio file
+ * @param {string} path - Path to audio file
+ * @returns {number} Duration in milliseconds
+ */
 export const m4aDuration = async (path: string): Promise<number> => {
+  // Because the header is seemingly anywhere search backwards and forwards simultaneously
   const controller = new AbortController();
   const duration = await Promise.race([
     search(path, controller.signal),

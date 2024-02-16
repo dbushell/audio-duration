@@ -122,6 +122,11 @@ const parseFrameHeader = (
   };
 };
 
+/**
+ * Get the duration of an `mp3` audio file
+ * @param {string} path - Path to audio file
+ * @returns {number} Duration in milliseconds
+ */
 export const mp3Duration = async (path: string): Promise<number> => {
   let duration = 0;
   const file = await Deno.open(path);

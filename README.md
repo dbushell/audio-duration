@@ -5,7 +5,7 @@ Get the **millisecond** duration of audio files in pure **Deno** flavoured JavaS
 ## Usage
 
 ```javascript
-import {duration} from 'https://deno.land/x/deno_audio_duration@v0.1.0/mod.ts';
+import {duration} from 'jsr:@dbushell/audio-duration@0.2';
 
 const ms = await duration('/path/to/audio.mp3');
 ```
