@@ -2,13 +2,17 @@
 // https://developer.apple.com/library/archive/documentation/QuickTime/QTFF/QTFFChap2/qtff2.html
 // https://github.com/Borewit/music-metadata/blob/master/lib/mp4/MP4Parser.ts
 
-import * as bytes from 'https://deno.land/std@0.216.0/bytes/mod.ts';
+import {equals} from 'jsr:@std/bytes@0.216';
 
 // Movie header atom signature
-const mvhd = new Uint8Array([109, 118, 104, 100]);
+const mvhd: Uint8Array = new Uint8Array([109, 118, 104, 100]);
 
 // Search for the duration
-const search = async (path: string, signal: AbortSignal, backwards = false) => {
+const search = async (
+  path: string,
+  signal: AbortSignal,
+  backwards = false
+): Promise<number> => {
   let duration = 0;
   const file = await Deno.open(path);
   try {
@@ -23,7 +27,7 @@ const search = async (path: string, signal: AbortSignal, backwards = false) => {
       if (!read || read < 5) break;
       for (let i = 0; i < read - 4; i++) {
         if (signal.aborted) break;
-        if (!bytes.equals(buffer.subarray(i, i + 4), mvhd)) {
+        if (!equals(buffer.subarray(i, i + 4), mvhd)) {
           continue;
         }
         await file.seek(seek + i, Deno.SeekMode.Start);

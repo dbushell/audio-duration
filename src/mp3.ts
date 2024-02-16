@@ -2,7 +2,7 @@
 // https://github.com/eric-gilbertson/fast-mp3-duration
 // https://github.com/ddsol/mp3-duration
 
-import {Buffer} from 'https://deno.land/std@0.216.0/io/buffer.ts';
+import {Buffer} from 'jsr:@std/io@0.216';
 
 const versions = ['2.5', 'x', '2', '1'];
 
@@ -53,7 +53,7 @@ const samples: {[key: string | number]: {[key: string | number]: number}} = {
   }
 };
 
-const skipId3 = (buffer: Uint8Array) => {
+const skipId3 = (buffer: Uint8Array): number => {
   if (buffer[0] === 0x49 && buffer[1] === 0x44 && buffer[2] === 0x33) {
     const id3v2Flags = buffer[5];
     const footerSize = id3v2Flags & 0x10 ? 10 : 0;
@@ -84,7 +84,7 @@ const frameSize = (
   bitRate: number,
   sampleRate: number,
   paddingBit: number
-) => {
+): number => {
   if (layer === '1') {
     return ((samples * bitRate * 125) / sampleRate + paddingBit * 4) | 0;
   } else {
@@ -92,7 +92,14 @@ const frameSize = (
   }
 };
 
-const parseFrameHeader = (header: Uint8Array) => {
+const parseFrameHeader = (
+  header: Uint8Array
+): {
+  bitRate: number;
+  sampleRate: number;
+  frameSize: number;
+  samples: number;
+} => {
   const b1 = header[1];
   const b2 = header[2];
   const versionBits = (b1 & 0x18) >> 3;
