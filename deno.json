@@ -1,5 +1,9 @@
 {
   "name": "@dbushell/audio-duration",
-  "version": "0.2.5",
-  "exports": "./mod.ts"
+  "version": "0.3.0",
+  "exports": "./mod.ts",
+  "publish": {
+    "include": ["src", "deno.json", "mod.ts", "LICENSE", "README.md"],
+    "exclude": [".github"]
+  }
 }
