@@ -1,13 +1,13 @@
 /**
+ * @module
+ *
  * Get the millisecond duration of an audio file.
  * MP3 and MP4 formats are supported.
  *
  * ```js
- * import {duration} from 'jsr:@dbushell/audio-duration@0.2';
+ * import {duration} from 'jsr:@dbushell/audio-duration';
  * const ms = await duration('/path/to/audio.mp3');
  * ```
- *
- * @module
  */
 import {extname} from 'jsr:@std/path@0.216';
 
