@@ -2,7 +2,7 @@
 // https://developer.apple.com/library/archive/documentation/QuickTime/QTFF/QTFFChap2/qtff2.html
 // https://github.com/Borewit/music-metadata/blob/master/lib/mp4/MP4Parser.ts
 
-import {equals} from 'jsr:@std/bytes@0.216';
+import {equals} from 'jsr:@std/bytes@1.0';
 
 // Movie header atom signature
 const mvhd: Uint8Array = new Uint8Array([109, 118, 104, 100]);

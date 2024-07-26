@@ -2,6 +2,8 @@
 
 Get the **millisecond** duration of audio files in pure **Deno** flavoured JavaScript. Currently MP3 / M4A / M4B formats are supported.
 
+[![JSR](https://jsr.io/badges/@dbushell/audio-duration?labelColor=98e6c8)](https://jsr.io/@dbushell/audio-duration) [![JSR Score](https://jsr.io/badges/@dbushell/audio-duration/score?labelColor=98e6c8)](https://jsr.io/@dbushell/audio-duration) [![JSR](https://jsr.io/badges/@dbushell?labelColor=98e6c8)](https://jsr.io/@dbushell)
+
 ## Usage
 
 ```javascript

@@ -2,7 +2,7 @@
 // https://github.com/eric-gilbertson/fast-mp3-duration
 // https://github.com/ddsol/mp3-duration
 
-import {Buffer} from 'jsr:@std/io@0.216';
+import {Buffer} from 'jsr:@std/io@0.224';
 
 const versions = ['2.5', 'x', '2', '1'];
 
